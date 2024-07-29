@@ -27,3 +27,23 @@ hen/Lib/site-packages/*.dist-info/
 # Ignore specific files or directories
 pipeline.pkl
 requirements.txt
+
+# Ignore Python bytecode
+*.pyc
+__pycache__/
+
+# Ignore virtual environment
+hen/
+
+# Ignore Jupyter Notebook checkpoints
+*.ipynb_checkpoints/
+
+# Ignore specific files
+pipeline.pkl
+requirements.txt
+
+# Ignore images
+Pictures/*.jpg
+
+# Ignore log files
+*.log
