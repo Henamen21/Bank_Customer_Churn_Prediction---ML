@@ -12,32 +12,41 @@ def welcome():
 def main():
     st.title("Churn prediction")
 
-    CreditScore = st.text_input("Credit Score")
-    Age = st.text_input("Age")
-    Tenure = st.text_input("Tenure ")
-    NumOfProducts = st.text_input("Number of products ")
-    Balance = st.text_input("Balance")
-    HasCrCard = st.selectbox("Has Card ? ", options=["Select", "Yes", "No",] )
-    if HasCrCard == "Yes":
-        HasCrCard = 1
-    else:
-        HasCrCard = 0
-    IsActiveMember = st.selectbox("Is Active memeber ? ", options=["Select", "Yes", "No",] )
-    if IsActiveMember == "Yes":
-        IsActiveMember = 1
-    else:
-        IsActiveMember = 0
-    EstimatedSalary = st.text_input("EstimatedSalary ")
-    Complain = st.selectbox("Has a compain ? :", options=["Select", "Yes", "No"] )
-    if Complain == "Yes":
-        Complain = 1
-    else:
-        Complain = 0
-    SatisfactionScore = st.text_input("Satisfaction score")
-    CardType = st.selectbox("Choose card type", options=["Select", "PLATINUM" , "DIAMOND" , "GOLD", "SILVER"] )
-    Gender = st.selectbox( "Choose a gender:", options=["Select", "Male", "Female"] )
-    Geography  = st.selectbox("Choose Geography:", options=["Select", "France", "Spain" , "Germany"] )
-    PointEarned = st.text_input("Point Earned")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        CreditScore = st.text_input("Credit Score")
+        Age = st.text_input("Age")
+        Tenure = st.text_input("Tenure")
+        NumOfProducts = st.text_input("Number of Products")
+        Balance = st.text_input("Balance")
+        EstimatedSalary = st.text_input("Estimated Salary")
+        SatisfactionScore = st.text_input("Satisfaction Score")
+        PointEarned = st.text_input("Points Earned")
+
+    with col2:
+
+        HasCrCard = st.selectbox("Has Card?", options=["Select", "Yes", "No"])
+        if HasCrCard == "Yes":
+            HasCrCard = 1
+        else:
+            HasCrCard = 0
+
+        IsActiveMember = st.selectbox("Is Active Member?", options=["Select", "Yes", "No"])
+        if IsActiveMember == "Yes":
+            IsActiveMember = 1
+        else:
+            IsActiveMember = 0
+
+        Complain = st.selectbox("Has a Complaint?", options=["Select", "Yes", "No"])
+        if Complain == "Yes":
+            Complain = 1
+        else:
+            Complain = 0
+
+        CardType = st.selectbox("Choose Card Type", options=["Select", "PLATINUM", "DIAMOND", "GOLD", "SILVER"])
+        Gender = st.selectbox("Choose Gender", options=["Select", "Male", "Female"])
+        Geography = st.selectbox("Choose Geography", options=["Select", "France", "Spain", "Germany"])
 
     data_dict = {
         'CreditScore': [CreditScore],
